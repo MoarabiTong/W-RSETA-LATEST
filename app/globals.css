@@ -1,0 +1,216 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Pure white theme throughout */
+  --background: oklch(1 0 0); /* Pure white background */
+  --foreground: oklch(0.15 0 0); /* Near black text for contrast */
+  --card: oklch(1 0 0); /* White cards */
+  --card-foreground: oklch(0.15 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0 0);
+  --primary: oklch(0.55 0.15 145); /* Light green primary */
+  --primary-foreground: oklch(1 0 0); /* White text on green */
+  --secondary: oklch(0.98 0.01 145); /* Almost white with subtle green tint */
+  --secondary-foreground: oklch(0.15 0 0);
+  --muted: oklch(0.98 0.01 145); /* Almost white with subtle green tint */
+  --muted-foreground: oklch(0.45 0.02 145);
+  --accent: oklch(0.65 0.18 145); /* Light green accent */
+  --accent-foreground: oklch(0.15 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(1 0 0);
+  --warning: oklch(0.75 0.15 85);
+  --warning-foreground: oklch(0.15 0.02 85);
+  --success: oklch(0.55 0.18 145);
+  --success-foreground: oklch(1 0 0);
+  --border: oklch(0.92 0.01 145); /* Very light green-tinted borders */
+  --input: oklch(1 0 0); /* White input backgrounds */
+  --ring: oklch(0.55 0.15 145);
+  --chart-1: oklch(0.55 0.15 145);
+  --chart-2: oklch(0.6 0.18 140);
+  --chart-3: oklch(0.7 0.15 85);
+  --chart-4: oklch(0.55 0.2 200);
+  --chart-5: oklch(0.65 0.18 50);
+  --radius: 0.75rem;
+  --sidebar: oklch(1 0 0);
+  --sidebar-foreground: oklch(0.15 0 0);
+  --sidebar-primary: oklch(0.55 0.15 145);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(1 0 0); /* White sidebar accent */
+  --sidebar-accent-foreground: oklch(0.15 0 0);
+  --sidebar-border: oklch(0.92 0.01 145); /* Very light borders */
+  --sidebar-ring: oklch(0.55 0.15 145);
+}
+
+.dark {
+  /* Keeping dark mode as white too for consistency */
+  --background: oklch(1 0 0); /* Pure white in dark mode too */
+  --foreground: oklch(0.15 0 0); /* Dark text for readability */
+  --card: oklch(1 0 0); /* White cards */
+  --card-foreground: oklch(0.15 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0 0);
+  --primary: oklch(0.55 0.15 145); /* Same primary color */
+  --primary-foreground: oklch(1 0 0); /* White text on green */
+  --secondary: oklch(0.98 0.01 145); /* Almost white */
+  --secondary-foreground: oklch(0.15 0 0);
+  --muted: oklch(0.98 0.01 145); /* Almost white */
+  --muted-foreground: oklch(0.45 0.02 145);
+  --accent: oklch(0.65 0.18 145);
+  --accent-foreground: oklch(0.15 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(1 0 0);
+  --warning: oklch(0.75 0.15 85);
+  --warning-foreground: oklch(0.15 0.02 85);
+  --success: oklch(0.55 0.18 145);
+  --success-foreground: oklch(1 0 0);
+  --border: oklch(0.92 0.01 145); /* Very light borders */
+  --input: oklch(1 0 0); /* White inputs */
+  --ring: oklch(0.55 0.15 145);
+  --chart-1: oklch(0.55 0.15 145);
+  --chart-2: oklch(0.6 0.18 140);
+  --chart-3: oklch(0.7 0.15 85);
+  --chart-4: oklch(0.55 0.2 200);
+  --chart-5: oklch(0.65 0.18 50);
+  --sidebar: oklch(1 0 0); /* White sidebar */
+  --sidebar-foreground: oklch(0.15 0 0);
+  --sidebar-primary: oklch(0.55 0.15 145);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(1 0 0); /* White sidebar accent */
+  --sidebar-accent-foreground: oklch(0.15 0 0);
+  --sidebar-border: oklch(0.92 0.01 145); /* Very light borders */
+  --sidebar-ring: oklch(0.55 0.15 145);
+}
+
+@theme inline {
+  --font-sans: "Geist", "Geist Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  /* Force white background on all elements */
+  html, body, #root, .App, .app-container, .auth-container, 
+  .home-container, .user-management, .main-nav, 
+  .App-header, .App-main, .App-footer,
+  .auth-card, .form-section, .form-group input,
+  .form-group select, .users-table, .modal-content {
+    background-color: var(--background) !important;
+    background: var(--background) !important;
+  }
+  
+  /* Ensure all containers have white background */
+  div:not([class*="bg-"]) {
+    background-color: var(--background) !important;
+  }
+  
+  /* Keep your existing buttons and interactive elements with colors */
+  .auth-button, .btn, .nav-link, .cta-button, .guide-button {
+    /* These keep their original colors */
+  }
+}
+
+/* Force white backgrounds for specific components */
+.auth-container,
+.home-container,
+.App,
+.app-container,
+.main-nav,
+.App-header,
+.App-main,
+.App-footer,
+.container,
+.left-panel,
+.right-panel,
+.commands-section,
+.user-management,
+.auth-card,
+.form-section {
+  background: white !important;
+  background-color: white !important;
+}
+
+/* Ensure inputs and form elements have white backgrounds */
+input, select, textarea, .form-group input, .form-group select {
+  background-color: white !important;
+}
+
+/* Table backgrounds */
+.users-table, .users-table th, .users-table td,
+.users-table-container, .user-detail-modal .modal-content {
+  background-color: white !important;
+}
+
+/* Modal backgrounds */
+.modal-content, .user-detail-modal, .user-detail-grid .detail-item span {
+  background-color: white !important;
+}
+
+/* Cards and sections */
+.card, .section, .panel, .dashboard-controls, .summary-stats .stat-card {
+  background-color: white !important;
+}
+
+/* Premium gradient animations */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer {
+  animation: shimmer 3s infinite linear;
+  background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
+  background-size: 1000px 100%;
+}
